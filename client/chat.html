@@ -1,0 +1,61 @@
+<head>
+  <title>Chat Apolo</title>
+</head>
+
+<body class="container">
+
+
+
+  <h1>Bienvenido al chat en Apolo <small>Todavia estamos en pruba</small></h1>
+  {{> chat}}
+  <br><br>
+  <h2>La pagina esta en creacion <small>Aproximadamente</small></h2>
+
+ 
+	<br>
+
+  <div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+    <span class="sr-only">50% Complete</span>
+  </div>
+</div>
+</body>
+
+
+<template name="chat">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Chat</h3>
+  </div>
+  <div class="panel-body">
+  
+<ul>
+	{{#each mensajes}}
+	   {{>momentos}}
+	{{/each}}
+</ul>
+
+
+	<form class="form form-center">
+	<div class="row">
+		<div class="col-xs-8 col-md-4">
+			<input class="form-control" type="text" name="mensaje" id="mensaje" placeholder="Coloque Aqui Su Mensaje" aotufocus>
+		</div>
+		<div class="col-xs-4 col-md-2">
+			<button class="btn btn-primary  btn-block" type="submit">Enviar</button>
+		</div>	
+	</div>
+	</form>
+  </div>
+</div>
+
+</template>
+<template name="momentos">
+<li class="list-group-item"><span class="text-muted">{{fecha}}</span>--"{{texto}}"<button class="btn btn-danger pull-right " data-delete>&times;</button>  </li>
+</template>
+
+<!--<template name="hello">
+     	 <button>Click Me</button>
+    	 <p>You've pressed the button {{counter}} times.</p>
+    </template>
+-->
